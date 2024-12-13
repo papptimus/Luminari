@@ -22,3 +22,4 @@ The content of this repository is protected under the **Creative Commons Attribu
   Luminari: A Poetic Framework for Thought
   by Dylan Papp and Artifex
   Repository: [https://github.com/papptimus/Luminari]
+See License.md for full details.
