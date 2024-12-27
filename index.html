@@ -49,7 +49,7 @@
   <script>
     // Function to load the plain text file and display it in the content section
     function loadText() {
-      fetch('https://github.com/papptimus/Luminari/tree/site/luminari.txt')
+      fetch('https://github.com/papptimus/Luminari/blob/5c65cf185a43b7caad975de0bec0a159115d1d35/luminari.txt')
         .then(response => response.text())
         .then(text => {
           document.getElementById("luminari-text").innerText = text;  // Insert the plain text directly into the HTML
