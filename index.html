@@ -9,7 +9,7 @@
   <!-- Theia Chatbot Script -->
   <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
   <!-- Load marked.js library -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/lib/marked.min.js"></script>
 </head>
 <body>
   <header>
@@ -49,10 +49,9 @@
   </footer>
 
   <script>
-    // Wait for the marked.js script to load
+    // Function to load the markdown file and convert it to HTML
     function loadMarkdown() {
-      // Check if marked is defined
-      if (typeof marked !== "undefined") {
+      if (typeof marked === "function") {
         fetch('https://raw.githubusercontent.com/papptimus/Luminari/87f8b240bc95079fe16d71f07a70d42cae1d735c/Luminari_%20a%20poetic%20framework%20for%20thought.md')
           .then(response => response.text())
           .then(markdown => {
@@ -61,17 +60,18 @@
           })
           .catch(error => console.error('Error loading markdown:', error));
       } else {
-        console.error("Error: marked.js is not loaded properly.");
+        console.error("Error: marked is not a function or not loaded properly.");
       }
     }
 
-    // Check if the marked script has loaded before calling the function
-    if (typeof marked === "undefined") {
-      console.log("waiting for marked.js to load...");
-      window.onload = loadMarkdown;  // Wait until the page is fully loaded
-    } else {
-      loadMarkdown();  // If marked is already available, load the markdown
-    }
+    // Ensure that marked.js is available before using it
+    window.onload = function () {
+      if (typeof marked === "undefined") {
+        console.log("waiting for marked.js to load...");
+      } else {
+        loadMarkdown(); // Load and display the markdown content
+      }
+    };
   </script>
 </body>
 </html>
