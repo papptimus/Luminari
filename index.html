@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Theia Chatbot Script -->
   <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
-  <!-- Marked.js Script (Classic Version) -->
-  <script src="https://cdn.jsdelivr.net/npm/marked@4.0.10/lib/marked.min.js"></script>
+  <!-- Marked.js Script (Stable Version) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@3.0.0/lib/marked.min.js"></script>
 </head>
 <body>
   <header>
@@ -54,7 +54,7 @@
       fetch('https://raw.githubusercontent.com/papptimus/Luminari/87f8b240bc95079fe16d71f07a70d42cae1d735c/Luminari_%20a%20poetic%20framework%20for%20thought.md')
         .then(response => response.text())
         .then(markdown => {
-          // Convert Markdown to HTML
+          // Convert Markdown to HTML using marked
           const htmlContent = marked(markdown);
           // Insert the HTML into the page
           document.getElementById("luminari-text").innerHTML = htmlContent;
