@@ -49,24 +49,29 @@
   </footer>
 
   <script>
-    // Fetch Markdown file from GitHub
+    // Wait for the marked.js script to load
     function loadMarkdown() {
-      fetch('https://raw.githubusercontent.com/papptimus/Luminari/87f8b240bc95079fe16d71f07a70d42cae1d735c/Luminari_%20a%20poetic%20framework%20for%20thought.md')
-        .then(response => response.text())
-        .then(markdown => {
-          // Use marked to convert Markdown to HTML
-          if (typeof marked === "function") {
-            const htmlContent = marked(markdown);  // Ensure marked is a function
+      // Check if marked is defined
+      if (typeof marked !== "undefined") {
+        fetch('https://raw.githubusercontent.com/papptimus/Luminari/87f8b240bc95079fe16d71f07a70d42cae1d735c/Luminari_%20a%20poetic%20framework%20for%20thought.md')
+          .then(response => response.text())
+          .then(markdown => {
+            const htmlContent = marked(markdown);  // Convert Markdown to HTML
             document.getElementById("luminari-text").innerHTML = htmlContent;
-          } else {
-            console.error("marked is not a function");
-          }
-        })
-        .catch(error => console.error('Error loading markdown:', error));
+          })
+          .catch(error => console.error('Error loading markdown:', error));
+      } else {
+        console.error("Error: marked.js is not loaded properly.");
+      }
     }
 
-    // Load Markdown content when the page is loaded
-    document.addEventListener("DOMContentLoaded", loadMarkdown);
+    // Check if the marked script has loaded before calling the function
+    if (typeof marked === "undefined") {
+      console.log("waiting for marked.js to load...");
+      window.onload = loadMarkdown;  // Wait until the page is fully loaded
+    } else {
+      loadMarkdown();  // If marked is already available, load the markdown
+    }
   </script>
 </body>
 </html>
