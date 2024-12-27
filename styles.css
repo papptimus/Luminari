@@ -9,6 +9,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #f4f4f4;
+  overflow-x: hidden; /* Prevent horizontal scrolling on the body */
 }
 
 header {
@@ -46,23 +47,32 @@ footer {
 /* Layout */
 .container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Prevent wrapping unless on smaller screens */
+  max-width: 1920px; /* Ensures no unintended overflow */
+  margin: 0 auto;
 }
 
 .left-panel, .right-panel {
   width: 480px;
   padding: 20px;
+  flex-shrink: 0; /* Prevent panels from shrinking */
 }
 
 .center-panel {
   width: 960px;
+  max-width: 100%;
   padding: 20px;
+  flex-grow: 1; /* Allow the center to expand if needed */
 }
 
 .scrollable-text {
   max-height: 600px;
   overflow-y: auto;
   margin-top: 20px;
+  white-space: normal; /* Ensure text wraps properly */
+  word-wrap: break-word; /* Handle long words or links */
+  overflow-wrap: break-word;
+  padding-right: 10px; /* Add spacing to prevent text clipping at the edge */
 }
 
 /* Artwork Styling */
@@ -75,7 +85,7 @@ footer {
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
   .container {
-    flex-direction: column;
+    flex-direction: column; /* Stack panels on smaller screens */
   }
   .left-panel, .center-panel, .right-panel {
     width: 100%;
