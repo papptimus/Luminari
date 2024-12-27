@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Theia Chatbot Script -->
   <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
-  <!-- Load marked.js library -->
-  <script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/lib/marked.min.js"></script>
 </head>
 <body>
   <header>
@@ -49,28 +47,19 @@
   </footer>
 
   <script>
-    // Function to load the markdown file and convert it to HTML
-    function loadMarkdown() {
-      if (typeof marked === "function") {
-        fetch('https://raw.githubusercontent.com/papptimus/Luminari/87f8b240bc95079fe16d71f07a70d42cae1d735c/Luminari_%20a%20poetic%20framework%20for%20thought.md')
-          .then(response => response.text())
-          .then(markdown => {
-            const htmlContent = marked(markdown);  // Convert Markdown to HTML
-            document.getElementById("luminari-text").innerHTML = htmlContent;
-          })
-          .catch(error => console.error('Error loading markdown:', error));
-      } else {
-        console.error("Error: marked is not a function or not loaded properly.");
-      }
+    // Function to load the plain text file and display it in the content section
+    function loadText() {
+      fetch('https://github.com/papptimus/Luminari/tree/site/luminari.txt')
+        .then(response => response.text())
+        .then(text => {
+          document.getElementById("luminari-text").innerText = text;  // Insert the plain text directly into the HTML
+        })
+        .catch(error => console.error('Error loading plain text:', error));
     }
 
-    // Ensure that marked.js is available before using it
+    // Ensure the text is loaded after the page has fully loaded
     window.onload = function () {
-      if (typeof marked === "undefined") {
-        console.log("waiting for marked.js to load...");
-      } else {
-        loadMarkdown(); // Load and display the markdown content
-      }
+      loadText();  // Load and display the plain text content
     };
   </script>
 </body>
