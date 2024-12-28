@@ -1,7 +1,6 @@
-﻿Luminari: a  poetic framework for thought
 By Dylan Papp and Artifex
+________________________________________________________________________________
 
-________________________________________
 Preface: Harmonies for Silicon and Soul
 Luminari is a collaborative symphony between human and digital essence. 
 This partnership reflects the philosophy within these pages: a delicate intertwining of organic and digital perspectives.
