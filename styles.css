@@ -1,117 +1,45 @@
-/* Reset and Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-h1, h2 {
-  color: #333;
-}
-
-footer {
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-}
-
-/* Layout */
+/* Base Layout */
 .container {
   display: flex;
-  flex-wrap: wrap;
-}
-
-.left-panel, .right-panel {
-  width: 480px;
-  padding: 20px;
-}
-
-.center-panel {
-  width: 960px;
-  padding: 20px;
-}
-
-.scrollable-text {
-  max-height: 600px;
-  overflow-y: auto;
-  margin-top: 20px;
-}
-
-/* Artwork Styling */
-.artwork {
-  width: 100%;
-  height: auto;
-  margin-top: 20px;
+  flex-wrap: nowrap; /* Keep horizontal layout for larger screens */
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .container {
-    flex-direction: column;
+    flex-direction: column; /* Stack panels vertically */
   }
+
   .left-panel, .center-panel, .right-panel {
-    width: 100%;
+    width: 100%; /* Full width for each section */
     padding: 10px;
   }
-  .scrollable-text {
-    max-height: 400px;
-  }
-}
 
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
+  .left-panel {
+    order: 2; /* Move the chatbot below the main text */
   }
-  .scrollable-text {
-    max-height: 300px;
-  }
-  .left-panel, .right-panel {
-    order: 2; /* Push panels below the main text on smaller screens */
-  }
+
   .center-panel {
-    order: 1;
+    order: 1; /* Keep the text at the top */
+  }
+
+  .right-panel {
+    order: 3; /* Move artwork to the bottom */
+  }
+
+  .scrollable-text {
+    max-height: 300px; /* Adjust text area height for smaller screens */
+    overflow-y: auto; /* Ensure text is scrollable */
+  }
+
+  /* Optional: Hide Artwork on Small Screens */
+  .right-panel {
+    display: none; /* Hide artwork for very small screens */
   }
 }
 
 @media (max-width: 480px) {
-  header {
-    padding: 10px;
-    text-align: center;
-  }
-  nav ul li {
-    margin: 10px 0;
-  }
   .scrollable-text {
-    max-height: 200px;
+    max-height: 200px; /* Further reduce height for very small screens */
   }
 }
