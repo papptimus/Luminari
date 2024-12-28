@@ -1,11 +1,56 @@
-/* Base Layout */
-.container {
-  display: flex;
-  flex-wrap: nowrap; /* Horizontal layout for larger screens */
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Panels */
-.left-panel {
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-panel, .right-panel {
   width: 480px;
   padding: 20px;
 }
@@ -15,58 +60,58 @@
   padding: 20px;
 }
 
-.right-panel {
-  width: 480px;
-  padding: 20px;
-}
-
 .scrollable-text {
   max-height: 600px;
   overflow-y: auto;
   margin-top: 20px;
 }
 
-/* Mobile-Friendly Adjustments */
+/* Artwork Styling */
+.artwork {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
 @media (max-width: 1200px) {
   .container {
-    flex-wrap: wrap; /* Allow panels to wrap */
+    flex-direction: column;
   }
-
   .left-panel, .center-panel, .right-panel {
-    width: 100%; /* Each panel gets full width */
+    width: 100%;
     padding: 10px;
   }
-
   .scrollable-text {
-    max-height: 400px; /* Adjust for smaller screens */
+    max-height: 400px;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Stack panels vertically */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-
-  .left-panel {
-    order: 2; /* Chatbot moves below text */
-  }
-
-  .center-panel {
-    order: 1; /* Main text remains at the top */
-  }
-
-  .right-panel {
-    order: 3; /* Artwork moves to the bottom */
-    display: none; /* Optional: Hide artwork */
-  }
-
   .scrollable-text {
-    max-height: 300px; /* Further adjust text height for smaller screens */
+    max-height: 300px;
+  }
+  .left-panel, .right-panel {
+    order: 2; /* Push panels below the main text on smaller screens */
+  }
+  .center-panel {
+    order: 1;
   }
 }
 
 @media (max-width: 480px) {
+  header {
+    padding: 10px;
+    text-align: center;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
   .scrollable-text {
-    max-height: 200px; /* Minimized text height for very small screens */
+    max-height: 200px;
   }
 }
