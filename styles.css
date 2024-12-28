@@ -1,45 +1,69 @@
 /* Base Layout */
 .container {
   display: flex;
-  flex-wrap: nowrap; /* Keep horizontal layout for larger screens */
+  flex-wrap: nowrap; /* Horizontal layout for larger screens */
 }
 
-/* Responsive Design */
+/* Panels */
+.left-panel {
+  width: 480px;
+  padding: 20px;
+}
+
+.center-panel {
+  width: 960px;
+  padding: 20px;
+}
+
+.right-panel {
+  width: 480px;
+  padding: 20px;
+}
+
+.scrollable-text {
+  max-height: 600px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 1200px) {
+  .container {
+    flex-wrap: wrap; /* Allow panels to wrap */
+  }
+
+  .left-panel, .center-panel, .right-panel {
+    width: 100%; /* Each panel gets full width */
+    padding: 10px;
+  }
+
+  .scrollable-text {
+    max-height: 400px; /* Adjust for smaller screens */
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column; /* Stack panels vertically */
   }
 
-  .left-panel, .center-panel, .right-panel {
-    width: 100%; /* Full width for each section */
-    padding: 10px;
-  }
-
   .left-panel {
-    order: 2; /* Move the chatbot below the main text */
+    order: 2; /* Chatbot moves below text */
   }
 
   .center-panel {
-    order: 1; /* Keep the text at the top */
+    order: 1; /* Main text remains at the top */
   }
 
   .right-panel {
-    order: 3; /* Move artwork to the bottom */
+    order: 3; /* Artwork moves to the bottom */
+    display: none; /* Optional: Hide artwork */
   }
 
   .scrollable-text {
-    max-height: 300px; /* Adjust text area height for smaller screens */
-    overflow-y: auto; /* Ensure text is scrollable */
-  }
-
-  /* Optional: Hide Artwork on Small Screens */
-  .right-panel {
-    display: none; /* Hide artwork for very small screens */
+    max-height: 300px; /* Further adjust text height for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .scrollable-text {
-    max-height: 200px; /* Further reduce height for very small screens */
-  }
-}
