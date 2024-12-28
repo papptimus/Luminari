@@ -23,11 +23,16 @@
   </header>
 
   <main class="container">
-    <div class="left-panel">
-      <!-- Theia Chatbot Embed -->
-      <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cm4vppzlu0059hbxt1bzmcal8" height="600px" width="100%"></zapier-interfaces-chatbot-embed>
+    <!-- Collapsible Chat Panel -->
+    <div>
+      <div class="toggle-btn" onclick="togglePanel('left-panel')">Toggle Chat</div>
+      <div class="left-panel panel-collapsed">
+        <!-- Theia Chatbot Embed -->
+        <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cm4vppzlu0059hbxt1bzmcal8" height="600px" width="100%"></zapier-interfaces-chatbot-embed>
+      </div>
     </div>
 
+    <!-- Main Content -->
     <div class="center-panel">
       <h1>﻿Luminari: a poetic framework for thought</h1>
       <section class="scrollable-text" id="luminari-text">
@@ -35,9 +40,13 @@
       </section>
     </div>
 
-    <div class="right-panel">
-      <img src="artwork1.jpg" alt="Art representing Principle 1" class="artwork">
-      <img src="artwork2.jpg" alt="Art representing Principle 2" class="artwork">
+    <!-- Collapsible Artwork Panel -->
+    <div>
+      <div class="toggle-btn" onclick="togglePanel('right-panel')">Toggle Artwork</div>
+      <div class="right-panel panel-collapsed">
+        <img src="artwork1.jpg" alt="Art representing Principle 1" class="artwork">
+        <img src="artwork2.jpg" alt="Art representing Principle 2" class="artwork">
+      </div>
     </div>
   </main>
 
@@ -48,12 +57,20 @@
   <script>
     // Function to load the plain text file and display it in the content section
     function loadText() {
-      fetch('https://luminari.world//assets/luminari.txt')
+      fetch('https://luminari.world/assets/luminari.txt')
         .then(response => response.text())
         .then(text => {
           document.getElementById("luminari-text").innerText = text;  // Insert the plain text directly into the HTML
         })
         .catch(error => console.error('Error loading plain text:', error));
+    }
+
+    // Function to toggle visibility of panels
+    function togglePanel(panelClass) {
+      const panel = document.querySelector(`.${panelClass}`);
+      if (panel) {
+        panel.classList.toggle('panel-collapsed');
+      }
     }
 
     // Ensure the text is loaded after the page has fully loaded
