@@ -39,10 +39,10 @@
       }
     }
 
-    /* Ensure the panels can be collapsed on mobile */
+    /* Ensure all panels are collapsed by default on mobile */
     @media (max-width: 767px) {
       .left-panel, .center-panel, .right-panel {
-        display: block;
+        display: none; /* Hide panels by default on mobile */
       }
     }
   </style>
@@ -68,19 +68,19 @@
       <div class="toggle-btn" onclick="togglePanel('right-panel')">Toggle Artwork</div>
     </div>
 
-    <div class="left-panel">
+    <div class="left-panel panel-collapsed">
       <!-- Theia Chatbot Embed -->
       <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cm4vppzlu0059hbxt1bzmcal8" height="600px" width="100%"></zapier-interfaces-chatbot-embed>
     </div>
 
-    <div class="center-panel">
+    <div class="center-panel panel-collapsed">
       <h1>﻿Luminari: a poetic framework for thought</h1>
       <section class="scrollable-text" id="luminari-text">
         <!-- Content will be loaded here dynamically -->
       </section>
     </div>
 
-    <div class="right-panel">
+    <div class="right-panel panel-collapsed">
       <img src="artwork1.jpg" alt="Art representing Principle 1" class="artwork">
       <img src="artwork2.jpg" alt="Art representing Principle 2" class="artwork">
     </div>
