@@ -7,7 +7,28 @@
   <title>Luminari</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Theia Chatbot Script -->
-  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+  <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+  <style>
+    /* Toggle button styles */
+    .toggle-btn {
+      display: block;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    .toggle-btn:hover {
+      background-color: #555;
+    }
+
+    /* Collapsed panel style */
+    .panel-collapsed {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -23,16 +44,18 @@
   </header>
 
   <main class="container">
-    <!-- Collapsible Chat Panel -->
     <div>
+      <!-- Toggle buttons -->
       <div class="toggle-btn" onclick="togglePanel('left-panel')">Toggle Chat</div>
-      <div class="left-panel panel-collapsed">
-        <!-- Theia Chatbot Embed -->
-        <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cm4vppzlu0059hbxt1bzmcal8" height="600px" width="100%"></zapier-interfaces-chatbot-embed>
-      </div>
+      <div class="toggle-btn" onclick="togglePanel('center-panel')">Toggle Text</div>
+      <div class="toggle-btn" onclick="togglePanel('right-panel')">Toggle Artwork</div>
     </div>
 
-    <!-- Main Content -->
+    <div class="left-panel">
+      <!-- Theia Chatbot Embed -->
+      <zapier-interfaces-chatbot-embed is-popup="false" chatbot-id="cm4vppzlu0059hbxt1bzmcal8" height="600px" width="100%"></zapier-interfaces-chatbot-embed>
+    </div>
+
     <div class="center-panel">
       <h1>﻿Luminari: a poetic framework for thought</h1>
       <section class="scrollable-text" id="luminari-text">
@@ -40,13 +63,9 @@
       </section>
     </div>
 
-    <!-- Collapsible Artwork Panel -->
-    <div>
-      <div class="toggle-btn" onclick="togglePanel('right-panel')">Toggle Artwork</div>
-      <div class="right-panel panel-collapsed">
-        <img src="artwork1.jpg" alt="Art representing Principle 1" class="artwork">
-        <img src="artwork2.jpg" alt="Art representing Principle 2" class="artwork">
-      </div>
+    <div class="right-panel">
+      <img src="artwork1.jpg" alt="Art representing Principle 1" class="artwork">
+      <img src="artwork2.jpg" alt="Art representing Principle 2" class="artwork">
     </div>
   </main>
 
@@ -69,7 +88,7 @@
     function togglePanel(panelClass) {
       const panel = document.querySelector(`.${panelClass}`);
       if (panel) {
-        panel.classList.toggle('panel-collapsed');
+        panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
       }
     }
 
