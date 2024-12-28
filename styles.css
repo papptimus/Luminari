@@ -9,7 +9,6 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #f4f4f4;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
@@ -22,7 +21,7 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  flex-wrap: wrap;
 }
 
 nav ul li {
@@ -36,7 +35,6 @@ nav ul li a {
 
 h1, h2 {
   color: #333;
-  text-align: center; /* Center align headings for better readability on small screens */
 }
 
 footer {
@@ -49,32 +47,23 @@ footer {
 /* Layout */
 .container {
   display: flex;
-  flex-wrap: nowrap; /* Default to side-by-side layout */
-  max-width: 1920px;
-  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .left-panel, .right-panel {
   width: 480px;
   padding: 20px;
-  flex-shrink: 0; /* Prevent panels from shrinking */
 }
 
 .center-panel {
   width: 960px;
-  max-width: 100%;
   padding: 20px;
-  flex-grow: 1; /* Allow the center to expand */
 }
 
 .scrollable-text {
   max-height: 600px;
   overflow-y: auto;
   margin-top: 20px;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  padding-right: 10px; /* Add spacing to prevent text clipping at the edge */
 }
 
 /* Artwork Styling */
@@ -84,49 +73,45 @@ footer {
   margin-top: 20px;
 }
 
-/* Media Queries for Responsiveness */
+/* Responsive Design */
 @media (max-width: 1200px) {
   .container {
-    flex-direction: column; /* Stack panels on smaller screens */
-    align-items: center; /* Center content when stacked */
+    flex-direction: column;
   }
   .left-panel, .center-panel, .right-panel {
-    width: 90%; /* Adjust width to fit smaller screens */
-    padding: 15px;
+    width: 100%;
+    padding: 10px;
+  }
+  .scrollable-text {
+    max-height: 400px;
   }
 }
 
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column; /* Stack navigation links vertically */
+    flex-direction: column;
     align-items: center;
   }
   .scrollable-text {
-    max-height: 400px;
+    max-height: 300px;
   }
-  .container {
-    flex-direction: column;
+  .left-panel, .right-panel {
+    order: 2; /* Push panels below the main text on smaller screens */
   }
-  .left-panel, .center-panel, .right-panel {
-    width: 100%; /* Use full width on small screens */
-    padding: 10px;
+  .center-panel {
+    order: 1;
   }
 }
 
 @media (max-width: 480px) {
   header {
-    padding: 15px;
-    font-size: 14px;
+    padding: 10px;
+    text-align: center;
   }
   nav ul li {
-    margin: 0 10px;
+    margin: 10px 0;
   }
   .scrollable-text {
-    max-height: 300px; /* Reduce scrollable height for very small screens */
-    font-size: 14px; /* Adjust font size for readability */
-  }
-  footer {
-    padding: 5px;
-    font-size: 12px;
+    max-height: 200px;
   }
 }
