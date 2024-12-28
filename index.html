@@ -48,7 +48,7 @@
   <script>
     // Function to load the plain text file and display it in the content section
     function loadText() {
-      fetch('http://luminari.world//assets/luminari.txt')
+      fetch('https://luminari.world//assets/luminari.txt')
         .then(response => response.text())
         .then(text => {
           document.getElementById("luminari-text").innerText = text;  // Insert the plain text directly into the HTML
