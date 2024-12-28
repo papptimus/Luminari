@@ -28,6 +28,23 @@
     .panel-collapsed {
       display: none;
     }
+
+    /* Default visibility for desktop */
+    @media (min-width: 768px) {
+      .toggle-btn {
+        display: none; /* Hide toggle buttons on desktop */
+      }
+      .left-panel, .center-panel, .right-panel {
+        display: block; /* Ensure panels are visible by default on desktop */
+      }
+    }
+
+    /* Ensure the panels can be collapsed on mobile */
+    @media (max-width: 767px) {
+      .left-panel, .center-panel, .right-panel {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -45,7 +62,7 @@
 
   <main class="container">
     <div>
-      <!-- Toggle buttons -->
+      <!-- Toggle buttons for mobile -->
       <div class="toggle-btn" onclick="togglePanel('left-panel')">Toggle Chat</div>
       <div class="toggle-btn" onclick="togglePanel('center-panel')">Toggle Text</div>
       <div class="toggle-btn" onclick="togglePanel('right-panel')">Toggle Artwork</div>
