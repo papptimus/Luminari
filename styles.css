@@ -67,3 +67,6 @@
 
 @media (max-width: 480px) {
   .scrollable-text {
+    max-height: 200px; /* Minimized text height for very small screens */
+  }
+}
