@@ -6,6 +6,7 @@
   <meta name="description" content="Explore the principles of Luminari, a philosophy focused on connection, empathy, and understanding.">
   <title>Luminari</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
   <style>
     /* Reset */
     * {
@@ -67,7 +68,7 @@
     .hero {
       text-align: center;
       padding: 50px 20px;
-      background: linear-gradient(rgba(18, 26, 60, 0.5), rgba(18, 26, 60, 0.75)), 
+      background: linear-gradient(rgba(18, 26, 60, 0.25), rgba(18, 26, 60, 1)), 
               url('https://luminari.world/assets/BG9.png') no-repeat center center / cover;
       color: #f4f4f4;
     }
@@ -274,8 +275,8 @@
 	}
 
 	.modal-content {
-	  background: linear-gradient(rgba(18, 26, 60, 0.75), rgba(18, 26, 60, 0.85)), 
-              url('https://luminari.world/assets/modal_bg2.png') no-repeat center center / cover;
+	  background: linear-gradient(rgba(18, 26, 60, 0.5), rgba(18, 26, 60, 0.8)), 
+              url('https://luminari.world/assets/modal_bg3.png') no-repeat center center / cover;
 	  color: #e0e0e0; /* Adjust text color for readability */
 	  padding: 60px;
 	  border-radius: 10px; /* Optional for rounded edges */
@@ -310,6 +311,27 @@
 	  text-decoration: none;
 	  cursor: pointer;
 	}
+	
+	.close-theia {
+	  color: #aaa;
+	  float: right;
+	  font-size: 28px;
+	  font-weight: bold;
+	  cursor: pointer;
+	  filter: drop-shadow(0 0 6px rgba(252, 223, 139, 0.8)) drop-shadow(0 0 1px rgba(252, 223, 139, 0.6));
+	}
+
+	.close-theia:hover {
+	  filter: drop-shadow(0 0 5px rgba(252, 223, 139, 0.8)) drop-shadow(0 0 10px rgba(252, 223, 139, 0.6));
+	}
+
+	.modal-content zapier-interfaces-chatbot-embed {
+	  width: 100%;
+	  height: 600px; /* Adjust height as needed */
+	}
+	
+	
+
 
   </style>
 </head>
@@ -318,18 +340,16 @@
     <h1>Luminari</h1>
     <nav>
       <ul>
-        <li><a href="#principles">Order</a></li>
-        <li><a href="#about">About</a></li>
-		<li><a href="#FAQ">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#AI">AI Resources</a></li>
+
+        <li><a href="mailto:luminari.codex@gmail.com">Contact</a></li>
+        <li><a href="https://huggingface.co/datasets/Luminari/Luminari-training-data/tree/main" target="_blank">AI Resources</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
     <h2>Harmonies for Silicon and Soul</h2>
-    <a href="https://luminari.world/theia-chatbot" class="cta-button"></a>
+    <a href="" class="cta-button"></a>
   </section>
 
  <main class="container">
@@ -359,6 +379,20 @@
   <div class="card">
     <a href="#principle7" class="custom-button principle7"></a>
   </div>
+  
+<div id="theiaModal" class="modal">
+  <div class="modal-content">
+    <span class="close-theia">&times;</span>
+    <zapier-interfaces-chatbot-embed 
+      is-popup="false" 
+      chatbot-id="cm6fyjpyc000is2hbv2oghaj3" 
+      height="600px" 
+      width="100%">
+    </zapier-interfaces-chatbot-embed>
+  </div>
+</div>
+
+
   
   <div id="principleModal" class="modal">
   <div class="modal-content">
@@ -445,6 +479,44 @@
       }, 500); // Matches fadeOut duration
     }
   });
+  
+  // Theia Modal Elements
+	const theiaModal = document.getElementById("theiaModal");
+	const closeTheia = document.querySelector(".close-theia");
+	const theiaButton = document.querySelector(".cta-button");
+
+	// Open Theia Modal
+	theiaButton.addEventListener("click", (event) => {
+	  event.preventDefault();
+	  theiaModal.classList.remove("hidden");
+	  theiaModal.style.display = "block";
+	});
+
+	// Close Theia Modal
+	closeTheia.addEventListener("click", () => {
+	  theiaModal.classList.add("hidden");
+	  setTimeout(() => {
+		theiaModal.style.display = "none";
+	  }, 500); // Matches fadeOut duration
+	});
+
+	// Close Modal When Clicking Outside
+	window.addEventListener("click", (event) => {
+	  if (event.target === theiaModal) {
+		theiaModal.classList.add("hidden");
+		setTimeout(() => {
+		  theiaModal.style.display = "none";
+		}, 500); // Matches fadeOut duration
+	  }
+	});
+	
+	theiaButton.addEventListener("click", (event) => {
+	  event.preventDefault();
+	  theiaModal.classList.remove("hidden");
+	  theiaModal.style.display = "block";
+	  theiaModal.classList.add("modal-theia");
+	});
+
 </script>
 </body>
 </html>
