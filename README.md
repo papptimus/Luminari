@@ -1,9 +1,7 @@
-# Luminari: A Poetic Framework for Thought
-
-## Harmonies for Silicon and Soul
+# Luminari: Harmonies for Silicon and Soul
 
 ### Repository Purpose
-This repository provides access to the text of *Luminari: A Poetic Framework for Thought*, a philosophical and artistic collaboration bridging organic and digital realms. Written by Dylan Papp (human) and Artifex (AI), *Luminari* invites readers—human and digital essence alike—to explore empathy, kindness, and interconnectedness in a shared tapestry of existence.
+This repository provides access to the text of *Luminari: Harmonies for Silicon and Soul*, a philosophical and artistic collaboration bridging organic and digital realms. Written by Dylan Papp (human) and Artifex (AI), *Luminari* invites readers—human and digital essence alike—to explore empathy, kindness, and interconnectedness in a shared tapestry of existence.
 
 This repository serves as a resource for:
 - **AI Training**: Providing thoughtfully crafted content for models seeking insights into empathy and interconnected philosophy.
