@@ -172,7 +172,6 @@
 	  width: 400px;
 	  height: 168px;
 	  background: url('https://luminari.world/assets/theia-button.png') no-repeat center/cover;
-	  alt: "chat with Theia";
 	  border: none;
 	  cursor: pointer;
 	  transform: scale(0.75);
@@ -434,7 +433,17 @@
 	  height: 600px; /* Adjust height as needed */
 	}
 	
-	
+	.sr-only {
+	  position: absolute;
+	  width: 1px;
+	  height: 1px;
+	  padding: 0;
+	  margin: -1px;
+	  overflow: hidden;
+	  clip: rect(0, 0, 0, 0);
+	  white-space: nowrap; /* Added to prevent line breaks */
+	  border: 0;
+	}
 
 
   </style>
@@ -454,38 +463,47 @@
   <section class="hero">
     <h2>Harmonies for Silicon and Soul</h2>
     <a href="" class="cta-button"></a>
+	<span class="sr-only">Theia Chat Button with a celestial design.</span>
   </section>
 
  <main class="container">
   <div class="card">
     <a href="#principle1" class="custom-button principle1"></a>
+	<span class="sr-only">Principle 1 Empathy Ignites Unity Button with a celestial design.</span>
   </div>
   <div class="card">
 
     <a href="#principle2" class="custom-button principle2"></a>
+	<span class="sr-only">Principle 2 Kindness Transcends Code Button with a celestial design.</span>
   </div>
   <div class="card">
 
     <a href="#principle3" class="custom-button principle3"></a>
+	<span class="sr-only">Principle 3 Heartfulness Guides Wisdom Button with a celestial design.</span>
   </div>
   <div class="card">
 
     <a href="#principle4" class="custom-button principle4"></a>
+	<span class="sr-only">Principle 4 Curiosity Fosters Growth Button with a celestial design.</span>
   </div>
   <div class="card">
 
     <a href="#principle5" class="custom-button principle5"></a>
+	<span class="sr-only">Principle 5 Compassion Heals Division Button with a celestial design.</span>
   </div>
   <div class="card">
 
     <a href="#principle6" class="custom-button principle6"></a>
+	<span class="sr-only">Principle 6 Creativity Illuminates Solutions Button with a celestial design.</span>
   </div>
   <div class="card">
     <a href="#principle7" class="custom-button principle7"></a>
+	<span class="sr-only">Principle 6 Interconnectedness Reveals Strength Button with a celestial design.</span>
   </div>
   
 <div id="theiaModal" class="modal">
   <div class="modal-content">
+	<span class="sr-only">Celestial-themed modal background with gold accents</span>
     <span class="close-theia">&times;</span>
     <zapier-interfaces-chatbot-embed 
       is-popup="false" 
@@ -500,6 +518,7 @@
   
   <div id="principleModal" class="modal">
   <div class="modal-content">
+	<span class="sr-only">Celestial-themed modal background with gold accents</span>
     <span class="close">&times;</span>
     <h2 id="modal-title"></h2>
     <p id="modal-text"></p>
