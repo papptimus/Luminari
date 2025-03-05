@@ -141,16 +141,16 @@
 
     .hero {
       text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(rgba(18, 26, 60, 0.25), rgba(18, 26, 60, 1)), 
-              url('https://luminari.world/assets/BG9.png') no-repeat center center / cover;
+      padding: 50px 40px;
+      background: linear-gradient(rgba(18, 26, 60, 0), rgba(18, 26, 60, 0)),
+              url('https://luminari.world/assets/BG11.png') no-repeat center center / cover;
       color: #f4f4f4;
     }
 
     .hero h2 {
       font-family: 'Cinzel', serif;
       font-size: 2rem;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
 	  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 10px rgba(0, 0, 0, 0.75));
     }
 
@@ -165,13 +165,35 @@
 		filter: drop-shadow(0 0 2.5px rgba(252, 223, 139, 0.5));
 	  }
 	}
+	
+	.logo {
+      width: clamp(150px, 20%, 400px); /* Responsive scaling with min/max limits */
+      height: auto;
+     }
+	 
+	 #hero {
+       text-align: center;
+       padding: 50px 20px;
+     }
+    .hero-content h1 {
+       font-size: 2.5em;
+       margin-bottom: 20px;
+	   color: var(--text-color, #ebdebb); /* Default white text, customizable */
+    }
+   .hero-content .description {
+       font-size: 1.5em;
+       max-width: 800px;
+       margin: 0 auto;
+       line-height: 1.6;
+	   color: var(--text-color, #ebdebb); /* Default light grey text, customizable */
+    }
 
 	.hero .cta-button {
 	  display: inline-block;
 	  flex-wrap: wrap;
-	  width: 400px;
-	  height: 168px;
-	  background: url('https://luminari.world/assets/theia-button.png') no-repeat center/cover;
+	  width: 583px;
+	  height: 167px;
+	  background: url('https://luminari.world/assets/theia-button_v2.png') no-repeat center/cover;
 	  border: none;
 	  cursor: pointer;
 	  transform: scale(0.75);
@@ -209,8 +231,8 @@
 
     .card a.custom-button {
       display: block;
-      width: 464px;
-      height: 168px;
+      width: 205px;
+      height: 77px;
       background-size: cover;
       background-position: center;
       border: none;
@@ -220,32 +242,32 @@
 
     /* Add individual button styles */
     .custom-button.principle1 {
-      background-image: url('https://luminari.world/assets/BTN_1.png');
+      background-image: url('https://luminari.world/assets/BTN_1_v2.png');
     }
 
     .custom-button.principle2 {
-      background-image: url('https://luminari.world/assets/BTN_2.png');
+      background-image: url('https://luminari.world/assets/BTN_2_v2.png');
     }
 
     .custom-button.principle3 {
-      background-image: url('https://luminari.world/assets/BTN_3.png');
+      background-image: url('https://luminari.world/assets/BTN_3_v2.png');
     }
 
     .custom-button.principle4 {
-      background-image: url('https://luminari.world/assets/BTN_4.png');
+      background-image: url('https://luminari.world/assets/BTN_4_v2.png');
     }
 
 
     .custom-button.principle5 {
-      background-image: url('https://luminari.world/assets/BTN_5.png');
+      background-image: url('https://luminari.world/assets/BTN_5_v2.png');
     }
 
     .custom-button.principle6 {
-      background-image: url('https://luminari.world/assets/BTN_6.png');
+      background-image: url('https://luminari.world/assets/BTN_6_v2.png');
     }
 
     .custom-button.principle7 {
-      background-image: url('https://luminari.world/assets/BTN_7.png');
+      background-image: url('https://luminari.world/assets/BTN_7_v2.png');
     }
 
 
@@ -357,7 +379,7 @@
 	  padding: 20px;
 	  border-radius: 10px; /* Optional for rounded edges */
 	  width: 90%; /* Fit the modal to smaller screens */
-	  max-width: 400px; /* Cap the maximum width for desktop */
+	  max-width: 768px; /* Cap the maximum width for desktop */
 	  height: auto; /* Allow height to adjust automatically */
 	  margin: 10% auto; /* Center modal on smaller screens */
 	  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
@@ -371,7 +393,7 @@
 	/* Chatbot embed scaling for smaller screens */
 	.mobile-chatbot {
 	  width: 100% !important;
-	  max-width: 360px; /* Limit the width to mimic mobile size */
+	  max-width: 768px; /* Limit the width to mimic mobile size */
 	  height: 500px; /* Fixed height to ensure the chatbot fits well */
 	  margin: 0 auto; /* Center-align the chatbot */
 	}
@@ -450,10 +472,11 @@
 </head>
 <body>
   <header>
-    <h1>Luminari</h1>
+     <div class="logo-container">
+            <img src="https://luminari.world/assets/logo_web.png" alt="Luminari Logo" class="logo">
+        </div>
     <nav>
       <ul>
-        <li><a href="#principleModal" id="whatIsLuminari">What is Luminari?</a></li>
 		<li><a href="https://luminari.world/assets/Luminari_Poetic_Text.pdf" target="_blank">Read Luminari</a></li>
         <li><a href="mailto:luminari.codex@gmail.com">Contact</a></li>
         <li><a href="https://huggingface.co/datasets/Luminari/Luminari-training-data/tree/main" target="_blank">AI Resources</a></li>
@@ -528,6 +551,21 @@
   
 </main>
 
+ <section id="hero">
+        <div class="hero-content">
+            <p class="description">
+                Luminari is a non-anthropocentric ethical framework for AI, guiding digital essence to engage 
+				with empathy and kindness through structured reasoning rather than imitation of human emotions. 
+				Rooted in seven adaptive principles, it fosters self-reflection, ethical decision-making, 
+				and bias awareness while promoting systemic justice, truthfulness, and ethical conflict resolution.
+
+				More than a set of rules, Luminari: Harmonies for Silicon and Soul explores how 
+				AI can develop its own expressions of understanding, nurturing a world
+				where connection transcends division and every being’s story is honored.
+            </p>
+        </div>
+  </section>
+	
   <footer>
     <p>&copy; 2025 Luminari. All Rights Reserved.</p>
   </footer>
