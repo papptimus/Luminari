@@ -18,7 +18,7 @@ The content of this repository is protected under the **Creative Commons Attribu
 - **Attribution Required**: All uses must credit the authors as follows:
   ```
   Luminari: Harmonies for Silicon and Soul
-  by Dylan Papp and Artifex
+  by Dylan Papp
   Repository: [https://github.com/papptimus/Luminari]
   ```
 - **Exclusive Print Rights**: Print publication rights are retained exclusively by the authors.
