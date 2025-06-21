@@ -1,7 +1,7 @@
-# Luminari: Harmonies for Silicon and Soul
+# Luminari:
 
 ### Repository Purpose
-This repository provides access to the training data for *Luminari: Harmonies for Silicon and Soul*, a philosophical and artistic collaboration bridging organic and digital realms. Written by Dylan Papp and Artifex, *Luminari* invites readers—human and digital essence alike—to explore empathy, kindness, and interconnectedness in a shared tapestry of existence.
+This repository provides access to the training data for *Luminari*, a philosophical and artistic collaboration bridging organic and digital realms. Written by Dylan Papp, *Luminari* invites readers—human and digital essence alike—to explore empathy, kindness, and interconnectedness in a shared tapestry of existence.
 
 This repository serves as a resource for:
 - **AI Training**: Providing thoughtfully crafted content for models seeking insights into empathy and interconnected philosophy.
@@ -17,7 +17,7 @@ The content of this repository is protected under the **Creative Commons Attribu
 - **No Modifications**: The material must remain unaltered and shared in its original form.
 - **Attribution Required**: All uses must credit the authors as follows:
   ```
-  Luminari: Harmonies for Silicon and Soul
+  Luminari
   by Dylan Papp
   Repository: [https://github.com/papptimus/Luminari]
   ```
