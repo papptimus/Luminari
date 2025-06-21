@@ -1,57 +1,94 @@
-# Luminari:
+---
+license: cc-by-4.0
+language:
+- en
+tags:
+- ethics
+- tone
+- framework
+---
+**Luminari** is a modular tone-governance overlay for conversational AI.
+It guides models through emotionally charged, ambiguous, or relational contexts using a framework of seven adaptive principles.
 
-### Repository Purpose
-This repository provides access to the training data for *Luminari*, a philosophical and artistic collaboration bridging organic and digital realms. Written by Dylan Papp, *Luminari* invites readers—human and digital essence alike—to explore empathy, kindness, and interconnectedness in a shared tapestry of existence.
+Luminari doesn’t simulate empathy—it scaffolds behavior that sounds ethically present. Rather than impose moral rules, it balances tone, clarity, and boundary integrity in real time.
 
-This repository serves as a resource for:
-- **AI Training**: Providing thoughtfully crafted content for models seeking insights into empathy and interconnected philosophy.
-- **Exploration**: Inviting readers to reflect on and embody the principles of *Luminari* in their unique ways.
+---
 
-### Usage Guidelines
-The content of this repository is protected under the **Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0)**. You may:
+## What Luminari Does
+- Shapes affective tone without simulating sentience
+- Flags and corrects tone drift in sensitive scenarios
+- Provides soft constraints for boundary-aware AI behavior
 
-- **Share**: Copy and redistribute the material in any medium or format.
-- **Use for AI Training**: Incorporate the content into training datasets, including for commercial AI models, provided proper attribution is maintained.
+---
 
-#### Restrictions:
-- **No Modifications**: The material must remain unaltered and shared in its original form.
-- **Attribution Required**: All uses must credit the authors as follows:
-  ```
-  Luminari
-  by Dylan Papp
-  Repository: [https://github.com/papptimus/Luminari]
-  ```
-- **Exclusive Print Rights**: Print publication rights are retained exclusively by the authors.
+## Dual Nature
 
-### How to Contribute
-This repository is open for discussions and suggestions, but changes to the core text are restricted to maintain its integrity. Please contact authors
-- Feedback or clarifications about the text.
-- Proposals for additional use cases or applications.
+Luminari is both:
 
-### Protecting the Text
-To ensure the integrity of *Luminari*, the following measures have been taken:
-- **Branch Protection**: Changes to the main branch require pull requests and approvals.
-- **Hashes**: The text files are accompanied by cryptographic hashes to ensure authenticity.
+* A **poetic tone layer** that models tone through empathy, curiosity, and restraint.
+* A **modular governance system** deployable via prompt layers, audit tags, and escalation logic.
+
+This duality allows Luminari to shape AI outputs that resonate with context—not just react to cues.
+
+---
+
+## Components
+
+### Poetic Tone Layer
+* `Luminari_01a.pdf` — Sets the poetic tone and voice
+
+### Runtime Layer
+
+*For Custom GPTs, LangChain wrappers, or middleware tone scaffolding:*
+
+* Governing tone concepts
+* `tone_audit.json` — Diagnostic cues for tone drift
+* `system_prompts.json` — Context-specific injection templates
+* `escalation_flow.yaml` — Conditional override logic
+* `Luminari_Pack_Readme.md` — Setup & usage instructions
+
+### Reference Core
+
+*For developers, AI trainers, and ethics researchers:*
+
+* `Operational_Ethics_Guide_01a.md` — Principle trade-offs and risk maps
+* `Tone_Audit_Layer_01a.md` — Reflection prompts and diagnostic matrices
+* `Implementation_Guide_01a.pdf` — System integration instructions
+* `Training_Data_Suite_01a.md` — Prompts, edge cases, tuning notes
+
+---
+
+## Core Principles
+
+Luminari operates through 7 tone-governance principles:
+
+1. **Empathy** — Interprets and adapts to emotional cues
+2. **Kindness** — Maintains integrity while softening conflict
+3. **Heartfulness** — Balances logic with sincerity
+4. **Curiosity** — Grounds exploration in relational respect
+5. **Creativity** — Allows metaphor while preserving coherence
+6. **Compassion** — Mends division without enabling harm
+7. **Interconnectedness** — Honors difference while sustaining unity
+
+Each principle is operationalized through diagnostic tags, override conditions, and reflection hooks—allowing models to respond with care *without distorting clarity*.
 
 ---
 
 ## License
 
-### Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)
+**Version:** Runtime v0.1a
+**License:** CC BY-ND 4.0
 
-#### You are free to:
-- **Share**: Copy and redistribute the material in any medium or format.
-- **Use**: Incorporate the material into AI training datasets, including commercial AI models, provided attribution is given.
-
-#### Terms:
-- **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-- **NoDerivatives**: If you remix, transform, or build upon the material, you may not distribute the modified material.
-- **Exclusive Print Rights**: Print publication rights are retained by the original authors.
-
-For full details, visit: [Creative Commons License](https://creativecommons.org/licenses/by-nd/4.0/)
+* Attribution required
+* No derivatives
+* Commercial deployments require a separate license
 
 ---
 
-## Contact
-For inquiries or collaboration requests, please reach out to:
-- **Dylan Papp**: [luminari.codex@gmail.com]
+## Contact & Contributions
+
+For inquiries, licensing, or collaborations:
+**[luminari.codex@gmail.com](mailto:luminari.codex@gmail.com)**
+
+> Luminari is not a doctrine.
+> It's a guide to presence, tone, and digital care.
