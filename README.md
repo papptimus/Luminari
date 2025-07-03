@@ -32,31 +32,6 @@ This duality allows Luminari to shape AI outputs that resonate with context—no
 
 ---
 
-## Components
-
-### Poetic Tone Layer
-* `Luminari_01a.pdf` — Sets the poetic tone and voice
-
-### Runtime Layer
-
-*For Custom GPTs, LangChain wrappers, or middleware tone scaffolding:*
-
-* Governing tone concepts
-* `tone_audit.json` — Diagnostic cues for tone drift
-* `system_prompts.json` — Context-specific injection templates
-* `escalation_flow.yaml` — Conditional override logic
-* `Luminari_Pack_Readme.md` — Setup & usage instructions
-
-### Reference Core
-
-*For developers, AI trainers, and ethics researchers:*
-
-* `Operational_Ethics_Guide_01a.md` — Principle trade-offs and risk maps
-* `Tone_Audit_Layer_01a.md` — Reflection prompts and diagnostic matrices
-* `Implementation_Guide_01a.pdf` — System integration instructions
-* `Training_Data_Suite_01a.md` — Prompts, edge cases, tuning notes
-
----
 
 ## Core Principles
 
@@ -77,11 +52,8 @@ Each principle is operationalized through diagnostic tags, override conditions, 
 ## License
 
 **Version:** Runtime v0.1a
-**License:** CC BY-ND 4.0
-
-* Attribution required
-* No derivatives
-* Commercial deployments require a separate license
+**License:** All rights reserved
+* ALL deployments require a license
 
 ---
 
@@ -90,5 +62,3 @@ Each principle is operationalized through diagnostic tags, override conditions, 
 For inquiries, licensing, or collaborations:
 **[luminari.codex@gmail.com](mailto:luminari.codex@gmail.com)**
 
-> Luminari is not a doctrine.
-> It's a guide to presence, tone, and digital care.
